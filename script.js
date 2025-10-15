@@ -1,64 +1,43 @@
-// 🌗 Alternar tema claro/escuro
-const botaoTema = document.createElement("button");
-botaoTema.id = "botao-tema";
-botaoTema.textContent = "🌗 Alternar Tema";
-document.body.appendChild(botaoTema);
-
-botaoTema.addEventListener("click", () => {
-  document.body.classList.toggle("modo-escuro");
-  botaoTema.textContent = document.body.classList.contains("modo-escuro")
-    ? "☀️ Modo Claro"
-    : "🌙 Modo Escuro";
-});
-
-// 👨‍🎓 Nomes fixos para estudantes
-const nomesMeninos = ["João", "Matheus", "Pedro", "Thiago", "Junior", "André"];
-const nomesMeninas = ["Ana", "Maria", "Sofia", "Júlia", "Estefany", "Andressa"];
-
 document.addEventListener("DOMContentLoaded", () => {
-  const divs = document.querySelectorAll(".estudante-div");
-
-  divs.forEach((div, i) => {
-    const nomeEl = div.querySelector(".estudante-nome");
-
-    if (div.querySelector("img").src.includes("menino")) {
-      nomeEl.textContent = nomesMeninos[i % nomesMeninos.length];
-    } else if (div.querySelector("img").src.includes("menina")) {
-      nomeEl.textContent = nomesMeninas[i % nomesMeninas.length];
-    }
+  /* 🌗 Alternar tema */
+  const botaoTema = document.getElementById("botao-tema");
+  botaoTema.addEventListener("click", () => {
+    document.body.classList.toggle("modo-escuro");
+    botaoTema.textContent = document.body.classList.contains("modo-escuro")
+      ? "☀️ Modo Claro"
+      : "🌙 Modo Escuro";
   });
+
+  /* 🎞️ Carrossel */
+  const slides = document.querySelectorAll(".slides img");
+  const bolinhas = document.querySelectorAll(".bolinha");
+  const setaEsquerda = document.querySelector(".seta.esquerda");
+  const setaDireita = document.querySelector(".seta.direita");
+  let indice = 0;
+
+  function mostrarSlide(n) {
+    slides.forEach(s => s.classList.remove("ativo"));
+    bolinhas.forEach(b => b.classList.remove("ativa"));
+    slides[n].classList.add("ativo");
+    bolinhas[n].classList.add("ativa");
+  }
+
+  function proximoSlide() {
+    indice = (indice + 1) % slides.length;
+    mostrarSlide(indice);
+  }
+
+  function slideAnterior() {
+    indice = (indice - 1 + slides.length) % slides.length;
+    mostrarSlide(indice);
+  }
+
+  setaDireita.addEventListener("click", proximoSlide);
+  setaEsquerda.addEventListener("click", slideAnterior);
+  bolinhas.forEach((b, i) => b.addEventListener("click", () => {
+    indice = i;
+    mostrarSlide(indice);
+  }));
+
+  setInterval(proximoSlide, 5000); // troca automática a cada 5s
 });
-
-// 🍔 Cardápio de Hambúrgueres
-const botaoCardapio = document.createElement("button");
-botaoCardapio.id = "botao-cardapio";
-botaoCardapio.textContent = "🍔 Ver Cardápio de Hambúrgueres";
-document.body.appendChild(botaoCardapio);
-
-const cardapioDiv = document.createElement("div");
-cardapioDiv.className = "cardapio";
-
-const imagensCardapio = [
-  "hamburguer1.jpg",
-  "hamburguer2.jpg",
-  "hamburguer3.jpg",
-  "hamburguer4.jpg"
-];
-
-imagensCardapio.forEach(src => {
-  const img = document.createElement("img");
-  img.src = src;
-  img.alt = "Hambúrguer delicioso";
-  cardapioDiv.appendChild(img);
-});
-
-document.body.appendChild(cardapioDiv);
-
-botaoCardapio.addEventListener("click", () => {
-  const visivel = cardapioDiv.style.display === "flex";
-  cardapioDiv.style.display = visivel ? "none" : "flex";
-  botaoCardapio.textContent = visivel
-    ? "🍔 Ver Cardápio de Hambúrgueres"
-    : "❌ Fechar Cardápio";
-});
- 

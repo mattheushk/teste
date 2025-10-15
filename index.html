@@ -9,66 +9,91 @@
 <body>
   <header>
     <h1 class="titulo_site">Cantina da Escola</h1>
+
+    <!-- 🔗 Ícones de redes sociais -->
+    <div class="redes-sociais">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <img src="imagens/instagram.png" alt="Instagram" class="icone-rede" />
+      </a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <img src="imagens/facebook.png" alt="Facebook" class="icone-rede" />
+      </a>
+      <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
+        <img src="imagens/whatsapp.png" alt="WhatsApp" class="icone-rede" />
+      </a>
+    </div>
   </header>
+
+  <!-- 🌄 Carrossel de imagens -->
+  <section class="carrossel">
+    <div class="slides">
+      <img src="imagens/banner1.jpg" alt="Cantina 1" class="ativo" />
+      <img src="imagens/banner2.jpg" alt="Cantina 2" />
+      <img src="imagens/banner3.jpg" alt="Cantina 3" />
+    </div>
+
+    <button class="seta esquerda" aria-label="Anterior">❮</button>
+    <button class="seta direita" aria-label="Próximo">❯</button>
+
+    <div class="bolinhas">
+      <span class="bolinha ativa"></span>
+      <span class="bolinha"></span>
+      <span class="bolinha"></span>
+    </div>
+  </section>
+
+  <!-- 🌗 Botão para alternar tema -->
+  <button id="botao-tema">🌙 Modo Escuro</button>
 
   <!-- 🔹 Estudantes: Meninos -->
   <section class="estudantes_todos">
     <div class="estudante-div">
-      <img class="estudante-imagem" src="menino1.jpg" alt="João">
+      <img class="estudante-imagem" src="imagens/menino1.jpg" alt="João" />
       <h3 class="estudante-nome">João</h3>
     </div>
     <div class="estudante-div">
-      <img class="estudante-imagem" src="menino2.jpg" alt="Matheus">
+      <img class="estudante-imagem" src="imagens/menino2.jpg" alt="Matheus" />
       <h3 class="estudante-nome">Matheus</h3>
     </div>
     <div class="estudante-div">
-      <img class="estudante-imagem" src="menino3.jpg" alt="Pedro">
+      <img class="estudante-imagem" src="imagens/menino3.jpg" alt="Pedro" />
       <h3 class="estudante-nome">Pedro</h3>
     </div>
     <div class="estudante-div">
-      <img class="estudante-imagem" src="menino4.jpg" alt="Thiago">
+      <img class="estudante-imagem" src="imagens/menino4.jpg" alt="Thiago" />
       <h3 class="estudante-nome">Thiago</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="menino5.jpg" alt="Junior">
-      <h3 class="estudante-nome">Junior</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="menino6.jpg" alt="André">
-      <h3 class="estudante-nome">André</h3>
     </div>
   </section>
 
   <!-- 🔹 Estudantes: Meninas -->
   <section class="estudantes_todos">
     <div class="estudante-div">
-      <img class="estudante-imagem" src="menina1.jpg" alt="Ana">
+      <img class="estudante-imagem" src="imagens/menina1.jpg" alt="Ana" />
       <h3 class="estudante-nome">Ana</h3>
     </div>
     <div class="estudante-div">
-      <img class="estudante-imagem" src="menina2.jpg" alt="Maria">
+      <img class="estudante-imagem" src="imagens/menina2.jpg" alt="Maria" />
       <h3 class="estudante-nome">Maria</h3>
     </div>
     <div class="estudante-div">
-      <img class="estudante-imagem" src="menina3.jpg" alt="Sofia">
+      <img class="estudante-imagem" src="imagens/menina3.jpg" alt="Sofia" />
       <h3 class="estudante-nome">Sofia</h3>
     </div>
     <div class="estudante-div">
-      <img class="estudante-imagem" src="menina4.jpg" alt="Júlia">
+      <img class="estudante-imagem" src="imagens/menina4.jpg" alt="Júlia" />
       <h3 class="estudante-nome">Júlia</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="menina5.jpg" alt="Estefany">
-      <h3 class="estudante-nome">Estefany</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="menina6.jpg" alt="Andressa">
-      <h3 class="estudante-nome">Andressa</h3>
     </div>
   </section>
 
- <footer class="contato-footer">
-  <p>📞 Mais informações? Entre em contato: <strong>(41) 8841-4314</strong></p>
-</footer>
+  <footer>
+    <p>
+      📞 Entre em contato no WhatsApp:
+      <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
+        <strong>(41) 8841-4314</strong>
+      </a>
+    </p>
+  </footer>
 
- 
+  <script src="script.js"></script>
+</body>
+</html>
