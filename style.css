@@ -1,110 +1,160 @@
+/* reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-  }
-  
-  header {
-    background-color: #424e61;
-    color: white;
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .cabecalho-itens {
-    max-width: 1980px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .cabecalho-imagem {
-    width: 6%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .titulo_site {
-    padding: 50px;
-    text-align: center;
-    width: 50%;
-    font-size: 30px;
-  }
-  
-  .sociais {
-    display: flex;
-    justify-content: flex-end;
-    width: 25%;
-    padding-right: 30px;
-  }
-  
-  .banner1 {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .estudante_titulo {
-    padding: 50px;
-    text-align: center;
-  }
-  
-  .estudante-nome {
-    text-align: center;
-  }
-  
-  .estudante-imagem {
-    width: 120px;
-  }
-  
-  .estudante-icone {
-    width: 38px;
-    padding: 4px 8px;
-  }
-  
-  .estudante {
-    background-color: #f4d300fe;
-    padding: 24px 0;
-    text-align: center;
-  }
-  
-  .estudante-div {
-    text-align: center;
-    padding: 24px 0;
-  }
-  
-  .estudantes_todos {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .escola {
-    background-image: linear-gradient(#40A2E3, #297bb3);
-    color: white;
-    padding: 24px 0;
-    text-align: center;
-  }
-  
-  .escola-titulo {
-    padding: 50px;
-    text-align: center;
-  }
-  
-  .logo_rodape {
-    height: 80px;
-    padding: 12px 0;
-  }
-  
-  .link {
-    color: #ffffff;
-    text-decoration:none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* tipografia */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.4;
+}
+
+/* header */
+header {
+  background-color: #424e61;
+  color: white;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Atende classes com underscore e com dash (HTML tinha underscore em alguns lugares) */
+.cabecalho-itens {
+  max-width: 1980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* corresponde a cabecalho_imagem e cabecalho-imagem */
+.cabecalho_imagem,
+.cabecalho-imagem {
+  width: 6%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* título do site */
+.titulo_site {
+  padding: 50px;
+  text-align: center;
+  width: 50%;
+  font-size: 30px;
+}
+
+/* sociais (algumas imagens também tinham classe "sociais" no HTML) */
+.sociais {
+  display: flex;
+  justify-content: flex-end;
+  width: 25%;
+  padding-right: 30px;
+}
+
+/* banner */
+.banner1 {
+  display: flex;
+  justify-content: center;
+}
+
+/* corrige nome de classe com ponto no teu HTML (se usares .escola.image, trocar por underscore/dash) */
+/* supondo que a imagem do banner tem class "escola-image" ou "escola.image" no HTML...
+   vamos criar uma regra geral para imagens dentro de .banner1 */
+.banner1 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* estudantes */
+.estudante_titulo {
+  padding: 50px;
+  text-align: center;
+}
+
+.estudante-nome {
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* imagens dos alunos */
+.estudante-imagem {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ícones sociais dos alunos */
+.estudante-icone {
+  width: 38px;
+  padding: 4px 8px;
+}
+
+/* bloco estudante */
+.estudante {
+  background-color: #f4d300fe;
+  padding: 24px 0;
+  text-align: center;
+}
+
+/* cada cartão do estudante */
+.estudante-div {
+  text-align: center;
+  padding: 24px 0;
+  width: 180px; /* torna os cards mais previsíveis */
+}
+
+/* container que agrupa os estudantes */
+.estudantes_todos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+/* rodapé / footer */
+.escola {
+  background-image: linear-gradient(#40A2E3, #297bb3);
+  color: white;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.escola-titulo {
+  padding: 50px;
+  text-align: center;
+}
+
+.logo_rodape {
+  height: 80px;
+  padding: 12px 0;
+}
+
+/* link no footer - remover possíveis caracteres invisíveis e garantir estilo correto */
+.link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* pequenas utilidades */
+button {
+  font-family: inherit;
+  border: none;
+  border-radius: 6px;
+}
+
+/* transições suaves para mudanças de tema */
+body, header, .estudante, footer, .estudante-imagem {
+  transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, transform 0.25s ease;
+}
+
 /* Tema escuro */
 .modo-escuro {
   background-color: #1e1e1e;
@@ -119,6 +169,37 @@
   background-color: #444;
 }
 
-.modo-escuro footer {
+.modo-escuro footer,
+.modo-escuro .escola {
   background-image: linear-gradient(#222, #111);
+}
+
+/* ajuste responsivo simples */
+@media (max-width: 768px) {
+  .cabecalho_itens,
+  .cabecalho-itens {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .titulo_site {
+    width: 100%;
+    padding: 20px;
+    font-size: 22px;
+  }
+
+  .estudante-div {
+    width: 45%;
+  }
+}
+
+@media (max-width: 420px) {
+  .estudante-div {
+    width: 100%;
+  }
+
+  .cabecalho_imagem,
+  .cabecalho-imagem {
+    width: 18%;
+  }
 }
