@@ -62,7 +62,7 @@ header {
 /* ==========================
    BOTÕES
 ========================== */
-#botao-tema, #botao-cardapio {
+#botao-tema {
   margin: 15px;
   padding: 10px 20px;
   border-radius: 8px;
@@ -74,7 +74,7 @@ header {
   transition: background-color 0.3s;
 }
 
-#botao-tema:hover, #botao-cardapio:hover {
+#botao-tema:hover {
   background-color: #2b3544;
 }
 
@@ -113,4 +113,21 @@ footer p {
 
 .modo-escuro footer {
   background-color: #111;
+}
+
+/* ==========================
+   CARROSSEL DE IMAGENS
+========================== */
+.carrossel {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.carrossel img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
 }
