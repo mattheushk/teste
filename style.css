@@ -9,6 +9,9 @@ body {
   transition: background-color 0.4s, color 0.4s;
 }
 
+/* ==========================
+   CABEÇALHO
+========================== */
 header {
   background-color: #424e61;
   color: white;
@@ -31,17 +34,19 @@ header {
   right: 25px;
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 
 .icone-rede {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .icone-rede:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
+  opacity: 0.85;
 }
 
 /* ==========================
@@ -52,6 +57,7 @@ header {
   overflow: hidden;
   width: 100%;
   height: 300px;
+  background-color: #000; /* fundo de segurança */
 }
 
 .slides img {
@@ -63,11 +69,11 @@ header {
 
 .slides img.ativo {
   display: block;
-  animation: fade 1s;
+  animation: fade 1s ease-in-out;
 }
 
 @keyframes fade {
-  from { opacity: 0.4; }
+  from { opacity: 0; }
   to { opacity: 1; }
 }
 
@@ -76,20 +82,22 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   border: none;
   color: white;
   font-size: 2rem;
-  padding: 5px 10px;
+  padding: 8px 14px;
   cursor: pointer;
   border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
 }
 
 .seta.esquerda { left: 15px; }
 .seta.direita { right: 15px; }
 
 .seta:hover {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Bolinhas */
@@ -105,17 +113,18 @@ header {
   width: 12px;
   height: 12px;
   margin: 0 5px;
-  background-color: #bbb;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .bolinha.ativa {
-  background-color: #717171;
+  background-color: #fff;
 }
 
 /* ==========================
-   ESTUDANTES
+   SEÇÃO DOS ESTUDANTES
 ========================== */
 .estudantes_todos {
   display: flex;
@@ -130,7 +139,7 @@ header {
   flex: 0 0 auto;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 180px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -138,7 +147,7 @@ header {
 
 .estudante-div:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .estudante-imagem {
@@ -151,26 +160,28 @@ header {
 .estudante-nome {
   margin: 10px 0 15px 0;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /* ==========================
    BOTÃO DE TEMA
 ========================== */
 #botao-tema {
-  margin: 20px auto;
-  padding: 10px 20px;
+  margin: 25px auto;
+  padding: 12px 25px;
   border-radius: 8px;
   background-color: #424e61;
   color: white;
   cursor: pointer;
   font-size: 16px;
   border: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   display: block;
 }
 
 #botao-tema:hover {
   background-color: #2b3544;
+  transform: scale(1.05);
 }
 
 /* ==========================
@@ -187,6 +198,7 @@ footer {
 footer a {
   color: #fff;
   text-decoration: underline;
+  font-weight: bold;
 }
 
 footer a:hover {
@@ -212,4 +224,51 @@ footer a:hover {
 
 .modo-escuro footer {
   background-color: #111;
+}
+
+.modo-escuro #botao-tema {
+  background-color: #2b2b2b;
+}
+
+.modo-escuro .seta {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.modo-escuro .bolinha {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.modo-escuro .bolinha.ativa {
+  background-color: #fff;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 768px) {
+  header {
+    padding: 15px;
+  }
+
+  .icone-rede {
+    width: 26px;
+    height: 26px;
+  }
+
+  .carrossel {
+    height: 220px;
+  }
+
+  .slides img {
+    height: 220px;
+  }
+
+  .estudantes_todos {
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .estudante-div {
+    width: 150px;
+  }
 }
