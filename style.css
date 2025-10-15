@@ -290,11 +290,9 @@ body {
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  position: relative;
-  bottom: 0;
+  position: fixed;      /* fixa no fundo */
+  bottom: 0;            /* alinha na base */
+  left: 0;
   width: 100%;
-}
-
-.contato-footer strong {
-  color: #00ffcc;
+  z-index: 1000;
 }
