@@ -1,112 +1,63 @@
-// ============================
-// 1️⃣ Troca automática de banners (carrossel simples)
-// ============================
-let banners = [
-  "paragrafo_1_banner.jpg",
-  "paragrafo_2_banner.jpg",
-  "paragrafo_3_banner.jpg"
-];
-let bannerIndex = 0;
+// 🌗 Alternar tema claro/escuro
+const botaoTema = document.createElement("button");
+botaoTema.id = "botao-tema";
+botaoTema.textContent = "🌗 Alternar Tema";
+document.body.appendChild(botaoTema);
 
-function mudarBanner() {
-  const banner = document.querySelector(".banner1 img");
-  if (!banner) return; // segurança
-  bannerIndex = (bannerIndex + 1) % banners.length;
-  banner.src = banners[bannerIndex];
-}
-
-setInterval(mudarBanner, 4000); // muda a cada 4 segundos
-
-
-// ============================
-// 2️⃣ Destaque do estudante ao passar o mouse
-// ============================
-function destacarImagem() {
-  const imagens = document.querySelectorAll(".estudante-imagem");
-  imagens.forEach(img => {
-    img.addEventListener("mouseover", () => {
-      img.style.transform = "scale(1.1)";
-      img.style.transition = "0.3s";
-      img.style.boxShadow = "0 0 10px #333";
-    });
-    img.addEventListener("mouseout", () => {
-      img.style.transform = "scale(1)";
-      img.style.boxShadow = "none";
-    });
-  });
-}
-
-
-// ============================
-// 3️⃣ Ordenar estudantes por nome
-// ============================
-function ordenarEstudantes() {
-  const container = document.querySelectorAll(".estudantes_todos");
-  container.forEach(secao => {
-    let divs = Array.from(secao.children);
-    divs.sort((a, b) => {
-      const nomeA = a.querySelector(".estudante-nome").textContent.trim();
-      const nomeB = b.querySelector(".estudante-nome").textContent.trim();
-      return nomeA.localeCompare(nomeB);
-    });
-    divs.forEach(div => secao.appendChild(div));
-  });
-  alert("Estudantes organizados por nome!");
-}
-
-
-// ============================
-// 4️⃣ Exibe nome do estudante ao clicar na foto
-// ============================
-function mostrarNomeAoClicar() {
-  const imagens = document.querySelectorAll(".estudante-imagem");
-  imagens.forEach(img => {
-    img.addEventListener("click", () => {
-      const nome = img.parentElement.querySelector(".estudante-nome").textContent;
-      alert("Este é o " + nome + "!");
-    });
-  });
-}
-
-
-// ============================
-// 5️⃣ Alternar tema claro/escuro
-// ============================
-function alternarTema() {
+botaoTema.addEventListener("click", () => {
   document.body.classList.toggle("modo-escuro");
-}
-
-
-// ============================
-// Botões dinâmicos (criados no topo da página)
-// ============================
-function criarBotoes() {
-  const botaoTema = document.createElement("button");
-  botaoTema.textContent = "🌗 Alternar Tema";
-  botaoTema.style.margin = "10px";
-  botaoTema.style.padding = "10px 20px";
-  botaoTema.style.cursor = "pointer";
-  botaoTema.addEventListener("click", alternarTema);
-
-  const botaoOrdenar = document.createElement("button");
-  botaoOrdenar.textContent = "🔤 Organizar Alunos por Nome";
-  botaoOrdenar.style.margin = "20px";
-  botaoOrdenar.style.padding = "10px 20px";
-  botaoOrdenar.style.cursor = "pointer";
-  botaoOrdenar.addEventListener("click", ordenarEstudantes);
-
-  // Adiciona ambos ao início do body
-  document.body.prepend(botaoOrdenar);
-  document.body.prepend(botaoTema);
-}
-
-
-// ============================
-// Inicialização ao carregar a página
-// ============================
-document.addEventListener("DOMContentLoaded", () => {
-  destacarImagem();
-  mostrarNomeAoClicar();
-  criarBotoes();
+  botaoTema.textContent = document.body.classList.contains("modo-escuro")
+    ? "☀️ Modo Claro"
+    : "🌙 Modo Escuro";
 });
 
+// 👨‍🎓 Nomes fixos para estudantes
+const nomesMeninos = ["João", "Matheus", "Pedro", "Thiago", "Junior", "André"];
+const nomesMeninas = ["Ana", "Maria", "Sofia", "Júlia", "Estefany", "Andressa"];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const divs = document.querySelectorAll(".estudante-div");
+
+  divs.forEach((div, i) => {
+    const nomeEl = div.querySelector(".estudante-nome");
+
+    if (div.querySelector("img").src.includes("menino")) {
+      nomeEl.textContent = nomesMeninos[i % nomesMeninos.length];
+    } else if (div.querySelector("img").src.includes("menina")) {
+      nomeEl.textContent = nomesMeninas[i % nomesMeninas.length];
+    }
+  });
+});
+
+// 🍔 Cardápio de Hambúrgueres
+const botaoCardapio = document.createElement("button");
+botaoCardapio.id = "botao-cardapio";
+botaoCardapio.textContent = "🍔 Ver Cardápio de Hambúrgueres";
+document.body.appendChild(botaoCardapio);
+
+const cardapioDiv = document.createElement("div");
+cardapioDiv.className = "cardapio";
+
+const imagensCardapio = [
+  "hamburguer1.jpg",
+  "hamburguer2.jpg",
+  "hamburguer3.jpg",
+  "hamburguer4.jpg"
+];
+
+imagensCardapio.forEach(src => {
+  const img = document.createElement("img");
+  img.src = src;
+  img.alt = "Hambúrguer delicioso";
+  cardapioDiv.appendChild(img);
+});
+
+document.body.appendChild(cardapioDiv);
+
+botaoCardapio.addEventListener("click", () => {
+  const visivel = cardapioDiv.style.display === "flex";
+  cardapioDiv.style.display = visivel ? "none" : "flex";
+  botaoCardapio.textContent = visivel
+    ? "🍔 Ver Cardápio de Hambúrgueres"
+    : "❌ Fechar Cardápio";
+});
