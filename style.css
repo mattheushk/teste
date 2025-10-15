@@ -283,3 +283,18 @@ body {
   background-color: #6C7A86 ;
 }
 
+.contato-footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.contato-footer strong {
+  color: #00ffcc;
+}
