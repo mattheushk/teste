@@ -137,8 +137,13 @@ footer,
 }
 
 /* 🔘 Botão do tema */
-#botao-tema, #botao-cardapio {
-  margin: 15px;
+#botao-tema {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #424e61;
+  color: white;
+  border: none;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
@@ -231,51 +236,4 @@ footer,
     width: 18%;
   }
 }
-.estudantes_todos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-/* 🍔 Cardápio */
-.cardapio {
-  display: none;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 20px;
-}
 
-.cardapio img {
-  width: 160px;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.cardapio img:hover {
-  transform: scale(1.05);
-}
-
-/* 🔘 Botões de ação */
-#botao-tema, #botao-cardapio {
-  margin: 15px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background-color: #424e61;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#botao-tema:hover, #botao-cardapio:hover {
-  background-color: #2b3544;
-}
-
-/* Layout dos estudantes */
-.estudantes_todos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin: 40px 0;
-}
