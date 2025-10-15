@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Turma da Cantina</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,43 +10,42 @@
   <header>
     <h1 class="titulo_site">Cantina da Escola</h1>
 
-    <!-- 🔗 Ícones de redes sociais -->
-    <div class="redes-sociais">
-      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <div class="redes-sociais" aria-label="Redes sociais">
+      <a id="link-instagram" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
         <img src="imagens/instagram.png" alt="Instagram" class="icone-rede" />
       </a>
-      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+      <a id="link-facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
         <img src="imagens/facebook.png" alt="Facebook" class="icone-rede" />
       </a>
-      <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
+      <a id="link-whatsapp" href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
         <img src="imagens/whatsapp.png" alt="WhatsApp" class="icone-rede" />
       </a>
     </div>
   </header>
 
-  <!-- 🌄 Carrossel de imagens -->
-  <section class="carrossel">
+  <!-- CARROSSEL -->
+  <section class="carrossel" aria-label="Carrossel de imagens">
     <div class="slides">
-      <img src="imagens/banner1.jpg" alt="Cantina 1" class="ativo" />
-      <img src="imagens/banner2.jpg" alt="Cantina 2" />
-      <img src="imagens/banner3.jpg" alt="Cantina 3" />
+      <img src="imagens/banner1.jpg" alt="Cantina 1" class="slide ativo" />
+      <img src="imagens/banner2.jpg" alt="Cantina 2" class="slide" />
+      <img src="imagens/banner3.jpg" alt="Cantina 3" class="slide" />
     </div>
 
     <button class="seta esquerda" aria-label="Anterior">❮</button>
     <button class="seta direita" aria-label="Próximo">❯</button>
 
-    <div class="bolinhas">
-      <span class="bolinha ativa"></span>
-      <span class="bolinha"></span>
-      <span class="bolinha"></span>
+    <div class="bolinhas" role="tablist" aria-label="Navegação do carrossel">
+      <button class="bolinha ativa" aria-label="Slide 1"></button>
+      <button class="bolinha" aria-label="Slide 2"></button>
+      <button class="bolinha" aria-label="Slide 3"></button>
     </div>
   </section>
 
-  <!-- 🌗 Botão para alternar tema -->
-  <button id="botao-tema">🌙 Modo Escuro</button>
+  <!-- BOTAO TEMA -->
+  <button id="botao-tema" aria-pressed="false">🌙 Modo Escuro</button>
 
-  <!-- 🔹 Estudantes: Meninos -->
-  <section class="estudantes_todos">
+  <!-- ESTUDANTES (meninos) -->
+  <section class="estudantes_todos" aria-label="Alunos - meninos">
     <div class="estudante-div">
       <img class="estudante-imagem" src="imagens/menino1.jpg" alt="João" />
       <h3 class="estudante-nome">João</h3>
@@ -65,8 +64,8 @@
     </div>
   </section>
 
-  <!-- 🔹 Estudantes: Meninas -->
-  <section class="estudantes_todos">
+  <!-- ESTUDANTES (meninas) -->
+  <section class="estudantes_todos" aria-label="Alunas - meninas">
     <div class="estudante-div">
       <img class="estudante-imagem" src="imagens/menina1.jpg" alt="Ana" />
       <h3 class="estudante-nome">Ana</h3>
@@ -88,7 +87,7 @@
   <footer>
     <p>
       📞 Entre em contato no WhatsApp:
-      <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
+      <a id="whats-footer" href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
         <strong>(41) 8841-4314</strong>
       </a>
     </p>

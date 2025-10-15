@@ -6,12 +6,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  transition: background-color 0.4s, color 0.4s;
+  transition: background-color 0.35s, color 0.35s;
 }
 
-/* ==========================
-   CABEÇALHO
-========================== */
+/* header */
 header {
   background-color: #424e61;
   color: white;
@@ -20,255 +18,62 @@ header {
   position: relative;
 }
 
-.titulo_site {
-  margin: 0;
-  font-size: 2rem;
-}
+.titulo_site { margin: 0; font-size: 2rem; }
 
-/* ==========================
-   REDES SOCIAIS
-========================== */
+/* redes sociais (topo direito) */
 .redes-sociais {
   position: absolute;
-  top: 20px;
-  right: 25px;
+  top: 18px;
+  right: 18px;
   display: flex;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
 }
 
-.icone-rede {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+.icone-rede { width: 30px; height: 30px; cursor: pointer; transition: transform 0.2s ease; }
+.icone-rede:hover { transform: scale(1.12); }
 
-.icone-rede:hover {
-  transform: scale(1.15);
-  opacity: 0.85;
-}
+/* carrossel */
+.carrossel { position: relative; overflow: hidden; width: 100%; height: 320px; background: #000; }
+.slides img { display: none; width: 100%; height: 320px; object-fit: cover; }
+.slides img.ativo { display: block; animation: fade 0.8s ease-in; }
+@keyframes fade { from { opacity: 0.3 } to { opacity: 1 } }
 
-/* ==========================
-   CARROSSEL
-========================== */
-.carrossel {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
-  background-color: #000; /* fundo de segurança */
-}
+/* setas */
+.seta { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); border: none; color: #fff; font-size: 1.8rem; padding: 8px 12px; border-radius: 50%; cursor: pointer; z-index: 5; }
+.seta.esquerda { left: 14px; } .seta.direita { right: 14px; }
+.seta:hover { background: rgba(0,0,0,0.7); }
 
-.slides img {
-  display: none;
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
+/* bolinhas */
+.bolinhas { position: absolute; bottom: 14px; width: 100%; text-align: center; z-index: 5; }
+.bolinha { display: inline-block; width: 12px; height: 12px; margin: 0 6px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; }
+.bolinha.ativa { background: #fff; }
 
-.slides img.ativo {
-  display: block;
-  animation: fade 1s ease-in-out;
-}
+/* estudantes */
+.estudantes_todos { display: flex; overflow-x: auto; gap: 28px; padding: 28px; scroll-behavior: smooth; }
+.estudante-div { flex: 0 0 auto; width: 180px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.08); text-align: center; transition: transform 0.22s ease; }
+.estudante-div:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.12); }
+.estudante-imagem { width: 100%; height: 170px; object-fit: cover; border-radius: 12px 12px 0 0; }
+.estudante-nome { margin: 10px 0 18px; font-weight: 700; }
 
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+/* botão tema */
+#botao-tema { display: block; margin: 18px auto; padding: 10px 22px; background: #424e61; color: #fff; border: none; border-radius: 8px; cursor: pointer; }
+#botao-tema:hover { background: #2b3544; }
 
-/* Setas */
-.seta {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.4);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 8px 14px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  transition: background-color 0.3s ease;
-}
+/* footer */
+footer { background: #424e61; color: #fff; text-align: center; padding: 18px; margin-top: 40px; }
+footer a { color: #fff; text-decoration: underline; }
 
-.seta.esquerda { left: 15px; }
-.seta.direita { right: 15px; }
+/* tema escuro */
+.modo-escuro { background: #161616; color: #eaeaea; }
+.modo-escuro header { background: #222; }
+.modo-escuro .estudante-div { background: #2b2b2b; color: #eaeaea; }
+.modo-escuro .slides img.ativo { filter: brightness(0.85); }
+.modo-escuro footer { background: #111; }
 
-.seta:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* Bolinhas */
-.bolinhas {
-  text-align: center;
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-}
-
-.bolinha {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.bolinha.ativa {
-  background-color: #fff;
-}
-
-/* ==========================
-   SEÇÃO DOS ESTUDANTES
-========================== */
-.estudantes_todos {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 40px;
-  padding: 30px;
-  justify-content: flex-start;
-}
-
-.estudante-div {
-  flex: 0 0 auto;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 180px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.estudante-div:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.estudante-imagem {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 15px 15px 0 0;
-}
-
-.estudante-nome {
-  margin: 10px 0 15px 0;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-/* ==========================
-   BOTÃO DE TEMA
-========================== */
-#botao-tema {
-  margin: 25px auto;
-  padding: 12px 25px;
-  border-radius: 8px;
-  background-color: #424e61;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: block;
-}
-
-#botao-tema:hover {
-  background-color: #2b3544;
-  transform: scale(1.05);
-}
-
-/* ==========================
-   RODAPÉ
-========================== */
-footer {
-  background-color: #424e61;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-footer a:hover {
-  color: #ddd;
-}
-
-/* ==========================
-   TEMA ESCURO
-========================== */
-.modo-escuro {
-  background-color: #1e1e1e;
-  color: #f5f5f5;
-}
-
-.modo-escuro header {
-  background-color: #2b2b2b;
-}
-
-.modo-escuro .estudante-div {
-  background-color: #333;
-  color: #f5f5f5;
-}
-
-.modo-escuro footer {
-  background-color: #111;
-}
-
-.modo-escuro #botao-tema {
-  background-color: #2b2b2b;
-}
-
-.modo-escuro .seta {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.modo-escuro .bolinha {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.modo-escuro .bolinha.ativa {
-  background-color: #fff;
-}
-
-/* ==========================
-   RESPONSIVIDADE
-========================== */
+/* responsivo */
 @media (max-width: 768px) {
-  header {
-    padding: 15px;
-  }
-
-  .icone-rede {
-    width: 26px;
-    height: 26px;
-  }
-
-  .carrossel {
-    height: 220px;
-  }
-
-  .slides img {
-    height: 220px;
-  }
-
-  .estudantes_todos {
-    gap: 25px;
-    padding: 20px;
-  }
-
-  .estudante-div {
-    width: 150px;
-  }
+  .carrossel { height: 220px; } .slides img, .slides img.ativo { height: 220px; }
+  .estudante-div { width: 150px; } .estudante-imagem { height: 140px; }
+  .icone-rede { width: 26px; height: 26px; }
 }
