@@ -1,17 +1,17 @@
-/* reset básico */
+/* 🧹 Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* tipografia */
+/* ✍️ Tipografia */
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.4;
 }
 
-/* header */
+/* 🧭 Header */
 header {
   background-color: #424e61;
   color: white;
@@ -19,8 +19,9 @@ header {
   padding: 20px;
 }
 
-/* Atende classes com underscore e com dash (HTML tinha underscore em alguns lugares) */
-.cabecalho-itens {
+/* Container do cabeçalho */
+.cabecalho-itens,
+.cabecalho_itens {
   max-width: 1980px;
   margin: 0 auto;
   display: flex;
@@ -28,16 +29,16 @@ header {
   justify-content: center;
 }
 
-/* corresponde a cabecalho_imagem e cabecalho-imagem */
-.cabecalho_imagem,
-.cabecalho-imagem {
+/* Logo ou imagem no cabeçalho */
+.cabecalho-imagem,
+.cabecalho_imagem {
   width: 6%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-/* título do site */
+/* Título principal do site */
 .titulo_site {
   padding: 50px;
   text-align: center;
@@ -45,7 +46,7 @@ header {
   font-size: 30px;
 }
 
-/* sociais (algumas imagens também tinham classe "sociais" no HTML) */
+/* Ícones sociais do cabeçalho */
 .sociais {
   display: flex;
   justify-content: flex-end;
@@ -53,22 +54,19 @@ header {
   padding-right: 30px;
 }
 
-/* banner */
+/* 🖼️ Banner */
 .banner1 {
   display: flex;
   justify-content: center;
 }
 
-/* corrige nome de classe com ponto no teu HTML (se usares .escola.image, trocar por underscore/dash) */
-/* supondo que a imagem do banner tem class "escola-image" ou "escola.image" no HTML...
-   vamos criar uma regra geral para imagens dentro de .banner1 */
 .banner1 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* estudantes */
+/* 👩‍🎓 Seção de estudantes */
 .estudante_titulo {
   padding: 50px;
   text-align: center;
@@ -79,7 +77,7 @@ header {
   margin-top: 8px;
 }
 
-/* imagens dos alunos */
+/* Foto dos estudantes */
 .estudante-imagem {
   width: 120px;
   height: 120px;
@@ -90,27 +88,27 @@ header {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ícones sociais dos alunos */
+/* Ícones sociais dos estudantes */
 .estudante-icone {
   width: 38px;
   padding: 4px 8px;
 }
 
-/* bloco estudante */
+/* Bloco de fundo dos estudantes */
 .estudante {
   background-color: #f4d300fe;
   padding: 24px 0;
   text-align: center;
 }
 
-/* cada cartão do estudante */
+/* Cada cartão individual */
 .estudante-div {
   text-align: center;
   padding: 24px 0;
-  width: 180px; /* torna os cards mais previsíveis */
+  width: 180px;
 }
 
-/* container que agrupa os estudantes */
+/* Container geral dos estudantes */
 .estudantes_todos {
   display: flex;
   justify-content: space-around;
@@ -119,9 +117,10 @@ header {
   padding: 0 20px;
 }
 
-/* rodapé / footer */
+/* 🦶 Rodapé */
+footer,
 .escola {
-  background-image: linear-gradient(#40A2E3, #297bb3);
+  background-image: linear-gradient(#40a2e3, #297bb3);
   color: white;
   padding: 24px 0;
   text-align: center;
@@ -137,25 +136,30 @@ header {
   padding: 12px 0;
 }
 
-/* link no footer - remover possíveis caracteres invisíveis e garantir estilo correto */
+/* Link no footer */
 .link {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* pequenas utilidades */
+/* 🔘 Botões */
 button {
   font-family: inherit;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
-/* transições suaves para mudanças de tema */
-body, header, .estudante, footer, .estudante-imagem {
+/* 🎨 Transições suaves (inclusive para o tema escuro) */
+body,
+header,
+.estudante,
+footer,
+.estudante-imagem {
   transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, transform 0.25s ease;
 }
 
-/* Tema escuro */
+/* 🌙 Tema escuro */
 .modo-escuro {
   background-color: #1e1e1e;
   color: #f5f5f5;
@@ -174,10 +178,10 @@ body, header, .estudante, footer, .estudante-imagem {
   background-image: linear-gradient(#222, #111);
 }
 
-/* ajuste responsivo simples */
+/* 📱 Ajuste responsivo */
 @media (max-width: 768px) {
-  .cabecalho_itens,
-  .cabecalho-itens {
+  .cabecalho-itens,
+  .cabecalho_itens {
     flex-direction: column;
     gap: 12px;
   }
@@ -198,8 +202,8 @@ body, header, .estudante, footer, .estudante-imagem {
     width: 100%;
   }
 
-  .cabecalho_imagem,
-  .cabecalho-imagem {
+  .cabecalho-imagem,
+  .cabecalho_imagem {
     width: 18%;
   }
 }
