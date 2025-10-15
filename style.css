@@ -137,13 +137,8 @@ footer,
 }
 
 /* 🔘 Botão do tema */
-#botao-tema {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #424e61;
-  color: white;
-  border: none;
+#botao-tema, #botao-cardapio {
+  margin: 15px;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
