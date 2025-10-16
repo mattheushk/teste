@@ -1,88 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Turma da Cantina</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cantina da Escola</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- CABEÇALHO -->
+  <button id="botao-tema" aria-pressed="false">🌙</button>
+
   <header class="cabecalho">
     <div class="cabecalho-itens">
-      <img class="cabecalho-imagem" src="imagens/logo_nossa_escola.png" alt="Logo da Escola">
-
+      <img src="imagens/logo_nossa_escola.png" alt="Logo da Escola" class="cabecalho-imagem" />
       <h1 class="titulo_site">Cantina da Escola</h1>
 
       <div class="sociais">
-        <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
-          <img class="sociais-icone" src="imagens/whatsapp.png" alt="WhatsApp">
-        </a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <img class="sociais-icone" src="imagens/facebook.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <img class="sociais-icone" src="imagens/instagram.png" alt="Instagram">
-        </a>
+        <a href="https://www.instagram.com" target="_blank"><img src="imagens/instagram.png" alt="Instagram" class="sociais-icone"></a>
+        <a href="https://www.facebook.com" target="_blank"><img src="imagens/facebook.png" alt="Facebook" class="sociais-icone"></a>
+        <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank"><img src="imagens/whatsapp.png" alt="WhatsApp" class="sociais-icone"></a>
       </div>
     </div>
   </header>
 
-  <!-- CARROSSEL -->
-  <section class="banner">
-    <div class="carousel">
-      <div class="slides">
-        <img src="imagens/banner1.jpg" alt="Cantina 1">
-        <img src="imagens/banner2.jpg" alt="Cantina 2">
-        <img src="imagens/banner3.jpg" alt="Cantina 3">
-      </div>
+  <section class="carrossel">
+    <div class="slides">
+      <img src="imagens/paragrafo_1_banner.png" alt="Cantina" class="slide ativo">
+      <img src="imagens/paragrafo_2_banner.png" alt="Bebidas" class="slide">
+      <img src="imagens/paragrafo_3_banner.png" alt="Lanches" class="slide">
+    </div>
+    <button class="seta esquerda">❮</button>
+    <button class="seta direita">❯</button>
+
+    <div class="bolinhas">
+      <span class="bolinha ativa"></span>
+      <span class="bolinha"></span>
+      <span class="bolinha"></span>
     </div>
   </section>
 
-  <!-- SEÇÃO ESTUDANTES -->
-  <section class="estudante">
-    <h2 class="estudante_titulo">Alunos em Destaque 2025</h2>
-    <div class="estudantes_todos">
-
-      <div class="estudante-div">
-        <img class="estudante-imagem" src="imagens/menino1.jpg" alt="João">
-        <h3 class="estudante-nome">João</h3>
-        <div class="icones">
-          <img class="estudante-icone" src="imagens/instagram.png" alt="Instagram de João">
-          <img class="estudante-icone" src="imagens/facebook.png" alt="Facebook de João">
-        </div>
+  <main>
+    <section class="estudante">
+      <h2 class="estudante_titulo">Alunos - Meninos</h2>
+      <div class="estudantes_todos">
+        <div class="estudante-div"><img src="imagens/estudante_menino1.png" alt="João" class="estudante-imagem"><h3>João</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menino2.png" alt="Matheus" class="estudante-imagem"><h3>Matheus</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menino3.png" alt="Pedro" class="estudante-imagem"><h3>Pedro</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menino4.png" alt="Thiago" class="estudante-imagem"><h3>Thiago</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menino5.png" alt="Lucas" class="estudante-imagem"><h3>Lucas</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menino6.png" alt="Rafael" class="estudante-imagem"><h3>Rafael</h3></div>
       </div>
+    </section>
 
-      <div class="estudante-div">
-        <img class="estudante-imagem" src="imagens/menino2.jpg" alt="Matheus">
-        <h3 class="estudante-nome">Matheus</h3>
-        <div class="icones">
-          <img class="estudante-icone" src="imagens/instagram.png" alt="Instagram de Matheus">
-          <img class="estudante-icone" src="imagens/facebook.png" alt="Facebook de Matheus">
-        </div>
+    <section class="estudante">
+      <h2 class="estudante_titulo">Alunas - Meninas</h2>
+      <div class="estudantes_todos">
+        <div class="estudante-div"><img src="imagens/estudante_menina1.png" alt="Ana" class="estudante-imagem"><h3>Ana</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menina2.png" alt="Maria" class="estudante-imagem"><h3>Maria</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menina3.png" alt="Sofia" class="estudante-imagem"><h3>Sofia</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menina4.png" alt="Júlia" class="estudante-imagem"><h3>Júlia</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menina5.png" alt="Laura" class="estudante-imagem"><h3>Laura</h3></div>
+        <div class="estudante-div"><img src="imagens/estudante_menina6.png" alt="Beatriz" class="estudante-imagem"><h3>Beatriz</h3></div>
       </div>
+    </section>
+  </main>
 
-      <div class="estudante-div">
-        <img class="estudante-imagem" src="imagens/menino3.jpg" alt="Pedro">
-        <h3 class="estudante-nome">Pedro</h3>
-        <div class="icones">
-          <img class="estudante-icone" src="imagens/instagram.png" alt="Instagram de Pedro">
-          <img class="estudante-icone" src="imagens/facebook.png" alt="Facebook de Pedro">
-        </div>
-      </div>
+  <footer class="escola">
+    <img src="imagens/logo_nossa_escola.png" alt="Logo da Escola" class="logo_rodape">
+    <p>📞 Entre em contato pelo WhatsApp: 
+      <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank">(41) 8841-4314</a>
+    </p>
+  </footer>
 
-      <div class="estudante-div">
-        <img class="estudante-imagem" src="imagens/menina1.jpg" alt="Ana">
-        <h3 class="estudante-nome">Ana</h3>
-        <div class="icones">
-          <img class="estudante-icone" src="imagens/instagram.png" alt="Instagram de Ana">
-          <img class="estudante-icone" src="imagens/facebook.png" alt="Facebook de Ana">
-        </div>
-      </div>
-
-      <div class="estudante-div">
-        <img class="estudante-imagem" src="imagens/menina2.jpg" alt="Maria">
-        <h3 class="estudante-nome">Maria</h3>
-        <div class="icones">
-          <img class="estudante-icone" src="imagens/instagram.png" alt="Instagram de Maria">
-          <img class="estudante-icone" src="imagens/facebook.png" alt="Faceb
+  <script src="script.js"></script>
+</body>
+</html>
