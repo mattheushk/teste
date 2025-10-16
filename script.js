@@ -1,34 +1,28 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Tema
-  const botao = document.getElementById("botao-tema");
-  botao.addEventListener("click", () => {
-    const ativo = document.body.classList.toggle("modo-escuro");
-    botao.textContent = ativo ? "☀️" : "🌙";
-  });
+// Alternar modo claro/escuro
+const botaoTema = document.getElementById("botao-tema");
+botaoTema.addEventListener("click", () => {
+  document.body.classList.toggle("escuro");
+  botaoTema.textContent = document.body.classList.contains("escuro") ? "☀️" : "🌙";
+});
 
-  // Carrossel
-  const slides = document.querySelectorAll(".slide");
-  const bolinhas = document.querySelectorAll(".bolinha");
-  const setaEsq = document.querySelector(".seta.esquerda");
-  const setaDir = document.querySelector(".seta.direita");
+// Carrossel
+const alunosContainer = document.querySelector(".alunos");
+const btnEsquerda = document.querySelector(".seta.esquerda");
+const btnDireita = document.querySelector(".seta.direita");
 
-  let idx = 0;
+let scroll = 0;
+const passo = 400;
 
-  function mostrarSlide(i) {
-    slides.forEach((s, j) => s.classList.toggle("ativo", j === i));
-    bolinhas.forEach((b, j) => b.classList.toggle("ativa", j === i));
-    idx = i;
+btnDireita.addEventListener("click", () => {
+  scroll -= passo;
+  if (Math.abs(scroll) >= alunosContainer.scrollWidth - alunosContainer.parentElement.offsetWidth) {
+    scroll = 0;
   }
+  alunosContainer.style.transform = `translateX(${scroll}px)`;
+});
 
-  function proximo() { mostrarSlide((idx + 1) % slides.length); }
-  function anterior() { mostrarSlide((idx - 1 + slides.length) % slides.length); }
-
-  setaDir.addEventListener("click", () => { proximo(); reset(); });
-  setaEsq.addEventListener("click", () => { anterior(); reset(); });
-  bolinhas.forEach((b, i) => b.addEventListener("click", () => { mostrarSlide(i); reset(); }));
-
-  let intervalo = setInterval(proximo, 4000);
-  function reset() { clearInterval(intervalo); intervalo = setInterval(proximo, 4000); }
-
-  mostrarSlide(0);
+btnEsquerda.addEventListener("click", () => {
+  scroll += passo;
+  if (scroll > 0) scroll = -(alunosContainer.scrollWidth - alunosContainer.parentElement.offsetWidth);
+  alunosContainer.style.transform = `translateX(${scroll}px)`;
 });

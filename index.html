@@ -1,74 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cantina da Escola</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Botão tema -->
-  <button id="botao-tema" aria-pressed="false">🌙</button>
-
-  <!-- Cabeçalho -->
-  <header class="cabecalho">
-    <div class="cabecalho-itens">
-      <img src="imagens/logo_nossa_escola.png" alt="Logo da Escola" class="cabecalho-imagem">
-      <h1 class="titulo_site">Cantina da Escola</h1>
-      <div class="sociais">
-        <a href="#" target="_blank"><img src="imagens/whatsapp.png" class="sociais-icone" alt="WhatsApp"></a>
-        <a href="#" target="_blank"><img src="imagens/facebook.png" class="sociais-icone" alt="Facebook"></a>
-        <a href="#" target="_blank"><img src="imagens/instagram.png" class="sociais-icone" alt="Instagram"></a>
-      </div>
+  <header>
+    <img src="imagens/logo_nossa_escola.png" alt="Logo da Escola" class="logo" />
+    <h1 class="titulo_site">Nossa Escola</h1>
+    <div class="redes-sociais">
+      <a href="#"><img src="imagens/whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="imagens/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="imagens/instagram.png" alt="Instagram"></a>
     </div>
   </header>
 
-  <!-- Carrossel -->
-  <section class="carrossel">
-    <div class="slides">
-      <img src="imagens/paragrafo_1_banner.jpg" class="slide ativo" alt="Cantina 1">
-      <img src="imagens/paragrafo_1_banner.jpg" class="slide" alt="Cantina 2">
-      <img src="imagens/paragrafo_1_banner.jpg" class="slide" alt="Cantina 3">
-    </div>
+  <main>
+    <!-- Banner principal -->
+    <section class="banner">
+      <img src="imagens/paragrafo_1_banner.png" alt="Banner Principal" class="banner-imagem">
+    </section>
 
-    <button class="seta esquerda" aria-label="Anterior">❮</button>
-    <button class="seta direita" aria-label="Próximo">❯</button>
+    <!-- Botão de tema -->
+    <button id="botao-tema">🌙</button>
 
-    <div class="bolinhas">
-      <button class="bolinha ativa"></button>
-      <button class="bolinha"></button>
-      <button class="bolinha"></button>
-    </div>
-  </section>
+    <!-- Carrossel -->
+    <section class="carrossel">
+      <h2>Alunos em destaque 2025</h2>
 
-  <!-- Alunos -->
-  <section class="estudante">
-    <h2 class="estudante_titulo">Alunos em Destaque 2025</h2>
+      <div class="carrossel-container">
+        <button class="seta esquerda">&#10094;</button>
+        <div class="alunos-wrapper">
+          <div class="alunos">
+            <!-- 6 meninos -->
+            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 1</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 2</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 3</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 4</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 5</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 6</h3></div>
 
-    <div class="estudantes_todos">
-      <!-- 6 meninos -->
-      <div class="estudante-div">
-        <img src="imagens/estudante_menino.png" alt="João" class="estudante-imagem">
-        <h3>João</h3>
+            <!-- 6 meninas -->
+            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 1</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 2</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 3</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 4</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 5</h3></div>
+            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 6</h3></div>
+          </div>
+        </div>
+        <button class="seta direita">&#10095;</button>
       </div>
-      <div class="estudante-div"><img src="imagens/estudante_menino.png" alt="Matheus" class="estudante-imagem"><h3>Matheus</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menino.png" alt="Pedro" class="estudante-imagem"><h3>Pedro</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menino.png" alt="Thiago" class="estudante-imagem"><h3>Thiago</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menino.png" alt="Carlos" class="estudante-imagem"><h3>Carlos</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menino.png" alt="Rafael" class="estudante-imagem"><h3>Rafael</h3></div>
+    </section>
+  </main>
 
-      <!-- 6 meninas -->
-      <div class="estudante-div"><img src="imagens/estudante_menina.png" alt="Ana" class="estudante-imagem"><h3>Ana</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menina.png" alt="Maria" class="estudante-imagem"><h3>Maria</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menina.png" alt="Sofia" class="estudante-imagem"><h3>Sofia</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menina.png" alt="Júlia" class="estudante-imagem"><h3>Júlia</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menina.png" alt="Beatriz" class="estudante-imagem"><h3>Beatriz</h3></div>
-      <div class="estudante-div"><img src="imagens/estudante_menina.png" alt="Laura" class="estudante-imagem"><h3>Laura</h3></div>
-    </div>
-  </section>
-
-  <footer class="escola">
-    <p>📞 Contato: (41) 8841-4314</p>
+  <footer>
+    <p>©2025 | Curso de ADS | Profº Antonio Carlos | Todos os Direitos Reservados.</p>
+    <p>Mais informações entre em contato 41 9.9999-9999</p>
   </footer>
 
   <script src="script.js"></script>
