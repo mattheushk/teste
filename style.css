@@ -1,3 +1,4 @@
+/* ===== RESET GERAL ===== */
 * {
   margin: 0;
   padding: 0;
@@ -101,18 +102,20 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 200px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .estudante-imagem {
   width: 120px;
   height: auto;
   margin-bottom: 10px;
+  border-radius: 8px;
 }
 
 .estudante-nome {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #333;
 }
 
 .icones {
@@ -144,6 +147,12 @@ body {
   margin-bottom: 10px;
 }
 
+.link {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .escola p {
-  font-size: 14px;
+  font-size: 16px;
+  margin-top: 10px;
 }
