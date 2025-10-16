@@ -1,4 +1,6 @@
-/* RESET */
+/* ==========================
+   RESET E BASE
+========================== */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +14,9 @@ body {
   transition: background 0.5s, color 0.5s;
 }
 
-/* CABEÇALHO */
+/* ==========================
+   CABEÇALHO
+========================== */
 header {
   background-color: #424e61;
   color: white;
@@ -41,7 +45,9 @@ header {
   transform: scale(1.2);
 }
 
-/* BOTÃO DE TEMA */
+/* ==========================
+   BOTÃO DE TEMA
+========================== */
 #botao-tema {
   position: fixed;
   top: 20px;
@@ -62,13 +68,23 @@ header {
   background-color: #2b3441;
 }
 
-/* BANNER */
+/* ==========================
+   BANNER PRINCIPAL
+========================== */
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+
 .banner-imagem {
   width: 100%;
+  height: auto;
   display: block;
 }
 
-/* CARROSSEL */
+/* ==========================
+   CARROSSEL / ALUNOS
+========================== */
 .carrossel {
   text-align: center;
   padding: 50px 0;
@@ -80,6 +96,7 @@ header {
   color: #222;
 }
 
+/* Centralização das setas e alunos */
 .carrossel-container {
   display: flex;
   align-items: center;
@@ -102,24 +119,30 @@ header {
   background-color: #2b3441;
 }
 
+/* Contêiner geral de alunos */
 .alunos-wrapper {
   overflow: hidden;
-  width: 80%;
+  width: 85%;
 }
 
 .alunos {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px 20px;
+  justify-items: center;
+  align-items: start;
   transition: transform 0.5s ease;
 }
 
 .aluno {
   background-color: white;
   border-radius: 12px;
-  padding: 10px;
+  padding: 15px;
   width: 180px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
 .aluno img {
@@ -129,28 +152,35 @@ header {
 
 .aluno h3 {
   margin-top: 10px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
+  color: #222;
 }
 
 .aluno:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-/* RODAPÉ */
+/* ==========================
+   RODAPÉ
+========================== */
 footer {
   background: linear-gradient(to right, #4a90e2, #357ab7);
   color: white;
   text-align: center;
   padding: 25px 10px;
   margin-top: 50px;
+  font-size: 0.95rem;
 }
 
 footer p {
   margin: 5px 0;
 }
 
-/* MODO ESCURO */
+/* ==========================
+   MODO ESCURO
+========================== */
 body.escuro {
   background-color: #2b3441;
   color: #f0f0f0;
@@ -167,4 +197,9 @@ body.escuro #botao-tema {
 
 body.escuro footer {
   background: linear-gradient(to right, #1f2733, #11161d);
+}
+
+body.escuro .aluno {
+  background-color: #3a4556;
+  color: #f0f0f0;
 }
