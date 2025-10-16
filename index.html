@@ -1,112 +1,102 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turma da Cantina</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa Escola</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ==========================
-       CABEÇALHO
-  =========================== -->
-  <header>
-    <h1 class="titulo_site">Cantina da Escola</h1>
 
-    <div class="redes-sociais" aria-label="Redes sociais">
-      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/instagram.png" alt="Instagram" class="icone-rede" />
-      </a>
-      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/facebook.png" alt="Facebook" class="icone-rede" />
-      </a>
-      <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/whatsapp.png" alt="WhatsApp" class="icone-rede" />
-      </a>
+  <header class="cabecalho">
+    <div class="cabecalho-itens">
+      <img class="cabecalho-imagem" src="logo_nossa_escola.png" alt="Logo da Escola">
+      <h1 class="titulo_site">Nossa Escola</h1>
+      <div class="sociais">
+        <img class="sociais-icone" src="whatsapp.png" alt="WhatsApp da Escola">
+        <img class="sociais-icone" src="facebook.png" alt="Facebook da Escola">
+        <img class="sociais-icone" src="instagram.png" alt="Instagram da Escola">
+      </div>
     </div>
   </header>
 
-  <!-- ==========================
-       CARROSSEL
-  =========================== -->
-  <section class="carrossel" aria-label="Carrossel de imagens">
-    <div class="slides">
-      <img src="imagens/banner1.jpg" alt="Cantina 1" class="ativo" />
-      <img src="imagens/banner2.jpg" alt="Cantina 2" />
-      <img src="imagens/banner3.jpg" alt="Cantina 3" />
-    </div>
-
-    <button class="seta esquerda" aria-label="Imagem anterior">❮</button>
-    <button class="seta direita" aria-label="Próxima imagem">❯</button>
-
-    <div class="bolinhas">
-      <span class="bolinha ativa"></span>
-      <span class="bolinha"></span>
-      <span class="bolinha"></span>
+  <!-- 🖼️ Carrossel -->
+  <section class="banner">
+    <div class="carousel">
+      <div class="slides">
+        <img src="paragrafo_1_banner.jpg" alt="Banner 1">
+        <img src="banner2.jpg" alt="Banner 2">
+        <img src="banner3.jpg" alt="Banner 3">
+      </div>
     </div>
   </section>
 
-  <!-- ==========================
-       BOTÃO DE TEMA
-  =========================== -->
-  <button id="botao-tema" aria-pressed="false">🌙 Modo Escuro</button>
+  <!-- 👨‍🎓 Alunos em Destaque -->
+  <section class="estudante">
+    <h1 class="estudante_titulo">Alunos em Destaque 2025</h1>
 
-  <!-- ==========================
-       ESTUDANTES - MENINOS
-  =========================== -->
-  <section class="estudantes_todos" aria-label="Alunos - meninos">
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="imagens/menino1.jpg" alt="João" />
-      <h3 class="estudante-nome">João</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="imagens/menino2.jpg" alt="Matheus" />
-      <h3 class="estudante-nome">Matheus</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="imagens/menino3.jpg" alt="Pedro" />
-      <h3 class="estudante-nome">Pedro</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="imagens/menino4.jpg" alt="Thiago" />
-      <h3 class="estudante-nome">Thiago</h3>
+    <div class="estudantes_todos">
+      <!-- Aluno masculino -->
+      <div class="estudante-div">
+        <img class="estudante-imagem" src="estudante_menino.png" alt="Aluno">
+        <h3 class="estudante-nome">Aluno 1</h3>
+        <div class="icones">
+          <a href="https://cursos.alura.com.br/dashboard" target="_blank">
+            <img class="estudante-icone" src="logo_nossa_escola.png" alt="Site da escola">
+          </a>
+          <img class="estudante-icone" src="instagram.png" alt="Instagram">
+          <img class="estudante-icone" src="facebook.png" alt="Facebook">
+        </div>
+      </div>
+
+      <div class="estudante-div">
+        <img class="estudante-imagem" src="estudante_menino.png" alt="Aluno">
+        <h3 class="estudante-nome">Aluno 2</h3>
+        <div class="icones">
+          <a href="https://cursos.alura.com.br/dashboard" target="_blank">
+            <img class="estudante-icone" src="logo_nossa_escola.png" alt="Site da escola">
+          </a>
+          <img class="estudante-icone" src="instagram.png" alt="Instagram">
+          <img class="estudante-icone" src="facebook.png" alt="Facebook">
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ==========================
-       ESTUDANTES - MENINAS
-  =========================== -->
-  <section class="estudantes_todos" aria-label="Alunas - meninas">
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="imagens/menina1.jpg" alt="Ana" />
-      <h3 class="estudante-nome">Ana</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="imagens/menina2.jpg" alt="Maria" />
-      <h3 class="estudante-nome">Maria</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="imagens/menina3.jpg" alt="Sofia" />
-      <h3 class="estudante-nome">Sofia</h3>
-    </div>
-    <div class="estudante-div">
-      <img class="estudante-imagem" src="imagens/menina4.jpg" alt="Júlia" />
-      <h3 class="estudante-nome">Júlia</h3>
+  <!-- 👩‍🎓 Alunas -->
+  <section class="estudante">
+    <h1 class="estudante_titulo">Turma Feminina</h1>
+    <div class="estudantes_todos">
+      <div class="estudante-div">
+        <img class="estudante-imagem" src="estudante_menina.png" alt="Aluna">
+        <h3 class="estudante-nome">Aluna 1</h3>
+        <div class="icones">
+          <a href="https://cursos.alura.com.br/dashboard" target="_blank">
+            <img class="estudante-icone" src="logo_nossa_escola.png" alt="Site da escola">
+          </a>
+          <img class="estudante-icone" src="instagram.png" alt="Instagram">
+          <img class="estudante-icone" src="facebook.png" alt="Facebook">
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ==========================
-       RODAPÉ
-  =========================== -->
-  <footer>
-    <p>
-      📞 Entre em contato no WhatsApp:
-      <a href="https://web.whatsapp.com/send?phone=554188414314" target="_blank" rel="noopener noreferrer">
-        <strong>(41) 8841-4314</strong>
-      </a>
-    </p>
+  <footer class="escola">
+    <img class="logo_rodape" src="logo_nossa_escola.png" alt="Logo da Escola">
+    <p>© 2025 Nossa Escola | Todos os direitos reservados</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JavaScript do carrossel -->
+  <script>
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides img').length;
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }, 4000);
+  </script>
+
 </body>
 </html>
