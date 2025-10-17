@@ -1,6 +1,4 @@
-/* ==========================
-   RESET E BASE
-========================== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -14,9 +12,7 @@ body {
   transition: background 0.5s, color 0.5s;
 }
 
-/* ==========================
-   CABEÇALHO
-========================== */
+/* CABEÇALHO */
 header {
   background-color: #424e61;
   color: white;
@@ -45,9 +41,7 @@ header {
   transform: scale(1.2);
 }
 
-/* ==========================
-   BOTÃO DE TEMA
-========================== */
+/* BOTÃO DE TEMA */
 #botao-tema {
   position: fixed;
   top: 20px;
@@ -68,23 +62,7 @@ header {
   background-color: #2b3441;
 }
 
-/* ==========================
-   BANNER PRINCIPAL
-========================== */
-.banner {
-  width: 100%;
-  overflow: hidden;
-}
-
-.banner-imagem {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ==========================
-   CARROSSEL / ALUNOS
-========================== */
+/* CARROSSEL */
 .carrossel {
   text-align: center;
   padding: 50px 0;
@@ -96,12 +74,20 @@ header {
   color: #222;
 }
 
-/* Centralização das setas e alunos */
 .carrossel-container {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 100%;
+}
+
+.banner-imagem {
+  width: 80%;
+  max-height: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  object-fit: cover;
 }
 
 .seta {
@@ -110,39 +96,53 @@ header {
   border: none;
   padding: 10px;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.seta-esquerda {
+  left: 5%;
+}
+
+.seta-direita {
+  right: 5%;
 }
 
 .seta:hover {
   background-color: #2b3441;
 }
 
-/* Contêiner geral de alunos */
+/* ALUNOS */
 .alunos-wrapper {
-  overflow: hidden;
-  width: 85%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .alunos {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 30px 20px;
-  justify-items: center;
-  align-items: start;
-  transition: transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.linha-meninos, .linha-meninas {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .aluno {
   background-color: white;
   border-radius: 12px;
   padding: 15px;
-  width: 180px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  width: 160px;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
 .aluno img {
@@ -152,35 +152,28 @@ header {
 
 .aluno h3 {
   margin-top: 10px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
-  color: #222;
 }
 
 .aluno:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  transform: scale(1.08);
 }
 
-/* ==========================
-   RODAPÉ
-========================== */
+/* RODAPÉ */
 footer {
   background: linear-gradient(to right, #4a90e2, #357ab7);
   color: white;
   text-align: center;
   padding: 25px 10px;
   margin-top: 50px;
-  font-size: 0.95rem;
 }
 
 footer p {
   margin: 5px 0;
 }
 
-/* ==========================
-   MODO ESCURO
-========================== */
+/* MODO ESCURO */
 body.escuro {
   background-color: #2b3441;
   color: #f0f0f0;
@@ -197,9 +190,4 @@ body.escuro #botao-tema {
 
 body.escuro footer {
   background: linear-gradient(to right, #1f2733, #11161d);
-}
-
-body.escuro .aluno {
-  background-color: #3a4556;
-  color: #f0f0f0;
 }

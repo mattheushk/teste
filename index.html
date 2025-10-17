@@ -7,57 +7,97 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <button id="botao-tema">☀️</button>
+
   <header>
-    <img src="imagens/logo_nossa_escola.png" alt="Logo da Escola" class="logo" />
-    <h1 class="titulo_site">Nossa Escola</h1>
+    <img src="logo_nossa_escola.png" alt="Logo da Escola" class="logo" />
+    <h1 class="titulo_site">Cantina da Escola</h1>
     <div class="redes-sociais">
-      <a href="#"><img src="imagens/whatsapp.png" alt="WhatsApp"></a>
-      <a href="#"><img src="imagens/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="imagens/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="whatsapp.png" alt="WhatsApp" /></a>
+      <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="instagram.png" alt="Instagram" /></a>
     </div>
   </header>
 
-  <main>
-    <!-- Banner principal -->
-    <section class="banner">
-      <img src="imagens/paragrafo_1_banner.png" alt="Banner Principal" class="banner-imagem">
-    </section>
+  <!-- Carrossel -->
+  <section class="carrossel">
+    <h2>Bem-vindo à Cantina da Escola</h2>
+    <div class="carrossel-container">
+      <button class="seta seta-esquerda">&#10094;</button>
+      <img id="imagem-carrossel" src="paragrafo_1_banner.jpg" alt="Banner" class="banner-imagem" />
+      <button class="seta seta-direita">&#10095;</button>
+    </div>
+  </section>
 
-    <!-- Botão de tema -->
-    <button id="botao-tema">🌙</button>
-
-    <!-- Carrossel -->
-    <section class="carrossel">
-      <h2>Alunos em destaque 2025</h2>
-
-      <div class="carrossel-container">
-        <button class="seta esquerda">&#10094;</button>
-        <div class="alunos-wrapper">
-          <div class="alunos">
-            <!-- 6 meninos -->
-            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 1</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 2</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 3</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 4</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 5</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menino.png"><h3>Aluno 6</h3></div>
-
-            <!-- 6 meninas -->
-            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 1</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 2</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 3</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 4</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 5</h3></div>
-            <div class="aluno"><img src="imagens/estudante_menina.png"><h3>Aluna 6</h3></div>
+  <!-- Alunos -->
+  <section class="carrossel alunos-destaque">
+    <h2>Alunos em Destaque 2025</h2>
+    <div class="alunos-wrapper">
+      <div class="alunos">
+        <!-- Linha dos Meninos -->
+        <div class="linha-meninos">
+          <div class="aluno">
+            <img src="estudante_menino.png" alt="João" />
+            <h3>João</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menino.png" alt="Matheus" />
+            <h3>Matheus</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menino.png" alt="Pedro" />
+            <h3>Pedro</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menino.png" alt="Lucas" />
+            <h3>Lucas</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menino.png" alt="Rafael" />
+            <h3>Rafael</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menino.png" alt="Gabriel" />
+            <h3>Gabriel</h3>
           </div>
         </div>
-        <button class="seta direita">&#10095;</button>
+
+        <!-- Linha das Meninas -->
+        <div class="linha-meninas">
+          <div class="aluno">
+            <img src="estudante_menina.png" alt="Ana" />
+            <h3>Ana</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menina.png" alt="Maria" />
+            <h3>Maria</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menina.png" alt="Julia" />
+            <h3>Julia</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menina.png" alt="Beatriz" />
+            <h3>Beatriz</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menina.png" alt="Laura" />
+            <h3>Laura</h3>
+          </div>
+          <div class="aluno">
+            <img src="estudante_menina.png" alt="Clara" />
+            <h3>Clara</h3>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>©2025 | Curso de ADS | Mais informações entre em contato 41 8841-4314</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
-<footer>
-  <p>©2025 | Curso de ADS | Mais informações entre em contato 41 8841-4314</p>
-</footer>

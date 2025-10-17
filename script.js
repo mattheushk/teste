@@ -1,28 +1,21 @@
-// Alternar modo claro/escuro
+// Alternar tema
 const botaoTema = document.getElementById("botao-tema");
 botaoTema.addEventListener("click", () => {
   document.body.classList.toggle("escuro");
-  botaoTema.textContent = document.body.classList.contains("escuro") ? "☀️" : "🌙";
+  botaoTema.textContent = document.body.classList.contains("escuro") ? "🌙" : "☀️";
 });
 
-// Carrossel
-const alunosContainer = document.querySelector(".alunos");
-const btnEsquerda = document.querySelector(".seta.esquerda");
-const btnDireita = document.querySelector(".seta.direita");
+// Carrossel de imagem (banner)
+const imagens = ["paragrafo_1_banner.jpg"];
+let indiceAtual = 0;
+const imagemCarrossel = document.getElementById("imagem-carrossel");
 
-let scroll = 0;
-const passo = 400;
-
-btnDireita.addEventListener("click", () => {
-  scroll -= passo;
-  if (Math.abs(scroll) >= alunosContainer.scrollWidth - alunosContainer.parentElement.offsetWidth) {
-    scroll = 0;
-  }
-  alunosContainer.style.transform = `translateX(${scroll}px)`;
+document.querySelector(".seta-esquerda").addEventListener("click", () => {
+  indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+  imagemCarrossel.src = imagens[indiceAtual];
 });
 
-btnEsquerda.addEventListener("click", () => {
-  scroll += passo;
-  if (scroll > 0) scroll = -(alunosContainer.scrollWidth - alunosContainer.parentElement.offsetWidth);
-  alunosContainer.style.transform = `translateX(${scroll}px)`;
+document.querySelector(".seta-direita").addEventListener("click", () => {
+  indiceAtual = (indiceAtual + 1) % imagens.length;
+  imagemCarrossel.src = imagens[indiceAtual];
 });
