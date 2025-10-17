@@ -5,17 +5,28 @@ botaoTema.addEventListener("click", () => {
   botaoTema.textContent = document.body.classList.contains("escuro") ? "🌙" : "☀️";
 });
 
-// Carrossel de imagem (banner)
-const imagens = ["paragrafo_1_banner.jpg"];
-let indiceAtual = 0;
-const imagemCarrossel = document.getElementById("imagem-carrossel");
+// Carrossel automático com transição suave
+const imagens = document.querySelectorAll(".banner-imagem");
+let indice = 0;
+
+function mostrarImagem(n) {
+  imagens.forEach((img, i) => {
+    img.classList.toggle("ativo", i === n);
+  });
+}
 
 document.querySelector(".seta-esquerda").addEventListener("click", () => {
-  indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
-  imagemCarrossel.src = imagens[indiceAtual];
+  indice = (indice - 1 + imagens.length) % imagens.length;
+  mostrarImagem(indice);
 });
 
 document.querySelector(".seta-direita").addEventListener("click", () => {
-  indiceAtual = (indiceAtual + 1) % imagens.length;
-  imagemCarrossel.src = imagens[indiceAtual];
+  indice = (indice + 1) % imagens.length;
+  mostrarImagem(indice);
 });
+
+// Troca automática a cada 5 segundos
+setInterval(() => {
+  indice = (indice + 1) % imagens.length;
+  mostrarImagem(indice);
+}, 5000);
