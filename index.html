@@ -8,13 +8,12 @@
 </head>
 <body>
   <!-- Botão de tema -->
-  <button id="botao-tema">☀️</button>
+  <button id="botao-tema" aria-label="Alternar tema">☀️</button>
 
   <!-- Cabeçalho -->
   <header>
     <img src="logo_nossa_escola.png" alt="Logo da Escola" class="logo" />
     <h1 class="titulo_site">Cantina da Escola</h1>
-
     <div class="redes-sociais">
       <a href="#"><img src="whatsapp.png" alt="WhatsApp" /></a>
       <a href="#"><img src="facebook.png" alt="Facebook" /></a>
@@ -28,42 +27,38 @@
     <div class="carrossel-container">
       <button class="seta seta-esquerda">&#10094;</button>
 
-      <!-- Múltiplos banners para o carrossel -->
-      <img src="paragrafo_1_banner.jpg" alt="Banner 1" class="banner-imagem ativo" />
-      <img src="paragrafo_2_banner.jpg" alt="Banner 2" class="banner-imagem" />
-      <img src="paragrafo_3_banner.jpg" alt="Banner 3" class="banner-imagem" />
+      <div class="imagens-carrossel">
+        <img src="paragrafo_1_banner.jpg" alt="Banner 1" class="ativo" />
+        <img src="paragrafo_2_banner.jpg" alt="Banner 2" />
+        <img src="paragrafo_3_banner.jpg" alt="Banner 3" />
+      </div>
 
       <button class="seta seta-direita">&#10095;</button>
     </div>
   </section>
 
   <!-- Alunos -->
-  <section class="carrossel alunos-destaque">
+  <section class="alunos-destaque">
     <h2>Alunos em Destaque 2025</h2>
-    <div class="alunos-wrapper">
-      <div class="alunos">
 
-        <!-- Linha dos Meninos -->
-        <div class="linha-meninos">
-          <div class="aluno"><img src="estudante_menino.png" alt="João" /><h3>João</h3></div>
-          <div class="aluno"><img src="estudante_menino.png" alt="Matheus" /><h3>Matheus</h3></div>
-          <div class="aluno"><img src="estudante_menino.png" alt="Pedro" /><h3>Pedro</h3></div>
-          <div class="aluno"><img src="estudante_menino.png" alt="Lucas" /><h3>Lucas</h3></div>
-          <div class="aluno"><img src="estudante_menino.png" alt="Rafael" /><h3>Rafael</h3></div>
-          <div class="aluno"><img src="estudante_menino.png" alt="Gabriel" /><h3>Gabriel</h3></div>
-        </div>
+    <!-- Linha dos Meninos -->
+    <div class="linha-alunos">
+      <div class="aluno"><img src="estudante_menino.png" alt="João" /><h3>João</h3></div>
+      <div class="aluno"><img src="estudante_menino.png" alt="Matheus" /><h3>Matheus</h3></div>
+      <div class="aluno"><img src="estudante_menino.png" alt="Pedro" /><h3>Pedro</h3></div>
+      <div class="aluno"><img src="estudante_menino.png" alt="Lucas" /><h3>Lucas</h3></div>
+      <div class="aluno"><img src="estudante_menino.png" alt="Rafael" /><h3>Rafael</h3></div>
+      <div class="aluno"><img src="estudante_menino.png" alt="Gabriel" /><h3>Gabriel</h3></div>
+    </div>
 
-        <!-- Linha das Meninas -->
-        <div class="linha-meninas">
-          <div class="aluno"><img src="estudante_menina.png" alt="Ana" /><h3>Ana</h3></div>
-          <div class="aluno"><img src="estudante_menina.png" alt="Maria" /><h3>Maria</h3></div>
-          <div class="aluno"><img src="estudante_menina.png" alt="Julia" /><h3>Julia</h3></div>
-          <div class="aluno"><img src="estudante_menina.png" alt="Beatriz" /><h3>Beatriz</h3></div>
-          <div class="aluno"><img src="estudante_menina.png" alt="Laura" /><h3>Laura</h3></div>
-          <div class="aluno"><img src="estudante_menina.png" alt="Clara" /><h3>Clara</h3></div>
-        </div>
-
-      </div>
+    <!-- Linha das Meninas -->
+    <div class="linha-alunos">
+      <div class="aluno"><img src="estudante_menina.png" alt="Ana" /><h3>Ana</h3></div>
+      <div class="aluno"><img src="estudante_menina.png" alt="Maria" /><h3>Maria</h3></div>
+      <div class="aluno"><img src="estudante_menina.png" alt="Julia" /><h3>Julia</h3></div>
+      <div class="aluno"><img src="estudante_menina.png" alt="Beatriz" /><h3>Beatriz</h3></div>
+      <div class="aluno"><img src="estudante_menina.png" alt="Laura" /><h3>Laura</h3></div>
+      <div class="aluno"><img src="estudante_menina.png" alt="Clara" /><h3>Clara</h3></div>
     </div>
   </section>
 

@@ -3,42 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   background-color: #f4f4f4;
   color: #333;
-  transition: background 0.5s, color 0.5s;
-}
-
-/* CABEÇALHO */
-header {
-  background-color: #424e61;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 50px;
-}
-
-.logo {
-  width: 90px;
-}
-
-.titulo_site {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.redes-sociais img {
-  width: 35px;
-  margin-left: 10px;
-  transition: transform 0.3s;
-}
-
-.redes-sociais img:hover {
-  transform: scale(1.2);
+  transition: background 0.4s, color 0.4s;
 }
 
 /* BOTÃO DE TEMA */
@@ -62,6 +33,35 @@ header {
   background-color: #2b3441;
 }
 
+/* CABEÇALHO */
+header {
+  background-color: #424e61;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+}
+
+.logo {
+  width: 80px;
+}
+
+.titulo_site {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.redes-sociais img {
+  width: 35px;
+  margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+.redes-sociais img:hover {
+  transform: scale(1.2);
+}
+
 /* CARROSSEL */
 .carrossel {
   text-align: center;
@@ -70,94 +70,109 @@ header {
 
 .carrossel h2 {
   font-size: 1.8rem;
-  margin-bottom: 30px;
-  color: #222;
+  margin-bottom: 20px;
 }
 
 .carrossel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  width: 100%;
-}
-
-.banner-imagem {
-  width: 80%;
-  max-height: 400px;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
+.imagens-carrossel {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.imagens-carrossel img {
+  width: 100%;
+  flex-shrink: 0;
+  display: none;
+}
+
+.imagens-carrossel img.ativo {
+  display: block;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Setas do carrossel */
 .seta {
-  background-color: #424e61;
+  background-color: rgba(0,0,0,0.6);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  transition: 0.3s;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.seta-esquerda {
-  left: 5%;
-}
-
-.seta-direita {
-  right: 5%;
+  transition: 0.3s;
 }
 
 .seta:hover {
-  background-color: #2b3441;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.seta-esquerda {
+  left: 15px;
+}
+
+.seta-direita {
+  right: 15px;
 }
 
 /* ALUNOS */
-.alunos-wrapper {
-  width: 90%;
-  margin: 0 auto;
+.alunos-destaque {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #fff;
 }
 
-.alunos {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.alunos-destaque h2 {
+  color: #424e61;
+  margin-bottom: 30px;
 }
 
-.linha-meninos, .linha-meninas {
+.linha-alunos {
   display: flex;
   justify-content: center;
-  gap: 25px;
   flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 40px;
 }
 
 .aluno {
-  background-color: white;
-  border-radius: 12px;
-  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
   width: 160px;
-  text-align: center;
+  padding: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
 
+.aluno:hover {
+  transform: scale(1.05);
+}
+
 .aluno img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .aluno h3 {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 1rem;
-  font-weight: bold;
-}
-
-.aluno:hover {
-  transform: scale(1.08);
+  color: #333;
 }
 
 /* RODAPÉ */
@@ -165,12 +180,12 @@ footer {
   background: linear-gradient(to right, #4a90e2, #357ab7);
   color: white;
   text-align: center;
-  padding: 25px 10px;
+  padding: 20px 10px;
   margin-top: 50px;
 }
 
 footer p {
-  margin: 5px 0;
+  font-size: 14px;
 }
 
 /* MODO ESCURO */
@@ -183,11 +198,11 @@ body.escuro header {
   background-color: #1f2733;
 }
 
+body.escuro footer {
+  background: linear-gradient(to right, #1f2733, #11161d);
+}
+
 body.escuro #botao-tema {
   background-color: #f0f0f0;
   color: #1f2733;
-}
-
-body.escuro footer {
-  background: linear-gradient(to right, #1f2733, #11161d);
 }
